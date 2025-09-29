@@ -7,4 +7,4 @@ Estou aprendendo a criar sites e agora vou gerenciar meu repositórios
 <br>
 Primeiro Projeto criando um site em HTML5 e CSS3<br>
 <a href="https://luiswittlich.github.io/Meusprojetos/Siteandroid/index.html">Meu primeiro exercicio.</a> Criei um exercicio proposto para um site sobre o Android. <br>
-<a href="https://luiswittlich.github.io/Meusprojetos/projeto-cordel/cordel.html" target="_blank"> Projeto Cordel Moderno</a> Segudno exercicio proposto utilizando o efeito paralax!
+<a href="https://luiswittlich.github.io/Meusprojetos/projeto-cordel/cordel.html" target="_blank"> Projeto Cordel Moderno</a> Segundoo exercicio proposto utilizando o efeito paralax.
