@@ -64,6 +64,7 @@ p.conteudo2 {
     padding: 70px 0px 70px 30px;
     padding-top: 10vh;
     padding-bottom: 10vh;
+    box-shadow: inset 6px 6px 13px 0px black;
 }
 #img1 {
     background-color: black;
@@ -77,6 +78,7 @@ p.conteudo2 {
     padding: 70px 0px 70px 30px;
     padding-top: 10vh;
     padding-bottom: 10vh;
+    box-shadow: inset 6px 6px 13px 0px black;
 }
 footer {
     background-color: black;
