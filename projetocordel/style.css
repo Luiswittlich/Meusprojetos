@@ -5,7 +5,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 
 
-
+:root {
+    --fonte1: Verdana, Geneva, tahoma, sans-serif;
+    --fonte2: 'Passion One', cursive;
+    --fonte3: 'Sriracha', cursive;
+}
 
 
 body {
@@ -22,23 +26,24 @@ body {
 
 header > h1 {
     font-size: 6vw;
-    font-family: "Passion One", sans-serif;
+    font-family: var(--fonte2);
     font-weight: 900;
     font-style: normal;
     letter-spacing: 0px;
     padding-top: 4px;
     margin: 0px;
+    font-variant: small-caps;
 }
 header > h2{
     font-size: 1.5vw;
-    font-family: "Passion One", sans-serif;
+    font-family: var(--fonte2);
     font-style: normal;
     padding bottom: 30px;
     border: 0px;
 }
 
 .conteudo {
-    font-family: "Sriracha";
+    font-family: var(--fonte3);
     background-color: white;
     padding: 70px 0px 70px 30px;
     font-size: 3.5vw;
@@ -58,9 +63,9 @@ p.conteudo2 {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: right center;
     height: 100%;
-    font-family: "Sriracha";
+    font-family: var(--fonte3);
     padding: 70px 0px 70px 30px;
     padding-top: 10vh;
     padding-bottom: 10vh;
@@ -74,7 +79,7 @@ p.conteudo2 {
     background-size: cover;
     background-position: center center;
     height: 100%;
-    font-family: "Sriracha";
+    font-family: var(--fonte3);
     padding: 70px 0px 70px 30px;
     padding-top: 10vh;
     padding-bottom: 10vh;
@@ -87,7 +92,7 @@ footer {
     padding: 2px;
     text-align: center;
     font-size: 1.5em;
-    font-family: "Passion One";
+    font-family: var(--fonte2);
 }
 footer > p {
     margin: 0px;
