@@ -92,3 +92,12 @@ footer {
 footer > p {
     margin: 0px;
 }
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+header a:hover, footer a:hover {
+    text-decoration: underline;
+}
