@@ -3,12 +3,17 @@
     font-family: Arial, Helvetica, sans-serif;
     background-image: linear-gradient(to bottom, #688C71, #C1D9C2);
     background-attachment: fixed;
+    margin: 0px;
   }
   div {
     background-color: #324037;
     color: white;
     margin:auto;
     padding: 15px;
+    border-radius: 10px;
+  }
+  a {
+    color: #BFBFBF;
   }
 </style>
 <div>
