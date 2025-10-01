@@ -1,3 +1,8 @@
+<style>
+  body {
+    background-color: black;
+  }
+</style>
 # HTML-CSS
 Curso HTML5 e CSS3
 
