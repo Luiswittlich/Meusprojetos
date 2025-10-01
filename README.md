@@ -1,6 +1,7 @@
 <style>
   body {
     background-color: black;
+    text-align: center;
   }
 </style>
 # HTML-CSS
