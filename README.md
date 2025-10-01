@@ -17,7 +17,6 @@
 
 </style>
 <main>
-  
 # HTML-CSS
 Curso HTML5 e CSS3
 
