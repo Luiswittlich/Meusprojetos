@@ -4,7 +4,13 @@
     background-image: linear-gradient(to bottom, #688C71, #C1D9C2);
     background-attachment: fixed;
   }
+  div {
+    background-color: #324037;
+    color: white;
+    margin:auto;
+  }
 </style>
+<div>
 # HTML-CSS
 Curso HTML5 e CSS3
 
@@ -15,3 +21,4 @@ Estou aprendendo a criar sites e agora vou gerenciar meu repositórios
 Primeiro Projeto criando um site em HTML5 e CSS3<br>
 <a href="https://luiswittlich.github.io/Meusprojetos/Siteandroid/index.html" target="_blank">Meu primeiro exercicio.</a> Criei um exercicio proposto para um site sobre o Android. <br>
 <a href="https://luiswittlich.github.io/Meusprojetos/projetocordel/index.html" target="_blank"> Projeto Cordel Moderno</a> Segundo exercicio proposto utilizando o efeito paralax.
+</div>
