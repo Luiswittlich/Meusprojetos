@@ -5,18 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="Icon.ico" type="image/x-icon">
     <title>Social</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        :root {
+            --fonte1:'Pacifico';
+            --fonte2:'Rouge Script';
+        }
+        body {
+            background-image: linear-gradient(to bottom, #D8B08C,#FFCB9A, #D2E8E3);
+            margin: auto;
+        }
+        header {
+            font-family: var(--fonte2);
+            font-size: 2em;
+            font-weight: lighter;
+            margin: auto;
+            background-color: #2C3532;
+            color: white;
+            text-align: center;
+
+        }
+        nav {
+            margin-left: 5vh;
+            text-align: left;
+            padding: 10px;
+        }
+        nav a{
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 5px;
+
+            
+        }
+        a:hover {
+            background-color: #5d6f69;
+            border-radius: 5px;
+            opacity: 1;
+            transition: 0.5s;
+        }
+        main {
+            background-color: beige;
+            box-shadow: 0px 0px 5px 0px black;
+            height: 100vh;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+
+        }
+        main h1 {
+            padding: 10px;
+        }
+
+        main img#principal{
+            padding: 10px;
+        }
+        main p {
+            padding: 20px;
+            text-align: center;
+            margin-left: 10vh;
+            margin-right: 10vh;
+
+        }
+
+        main ul {
+            margin-left: 10vh;
+            text-align: left;
+            list-style-type: none;
+        }
+
+        
+        
+    </style>
 </head>
 <body>
-    <h1>Minhas Redes Sociais</h1>
-    <h2>Quem sou eu?</h2>
-    <img src="img150.png" alt="Foto Perfil">
-    <p>Meu nome é <strong>Luis Carlos Wittlich Junior,</strong> estou aprendendo a programar e estou cursando Análise e Desenvolvimento de Sistemas pela Instituição Uninter! Estou desenvolvendo habilidades para programar em JavaScrip, Python, e aprendendo a desenvolver site em HTML5 e CSS3.</p>
-    <h2>Como falar comigo?</h2>
-    <ul type="disk">
-        <li><img src="icone-linkedin.png" alt="PAGINA linkeDin"> <a href="https://www.linkedin.com/in/luiswittlich" target="_blank" rel="external">/luiswittlich</a> - Me adiciona lá no Linkedin</li>
-        <li><img src="icone-instagram.png" alt="Meu instagram"><a href="https://www.instagram.com/luis_wittlich" target="_blank" rel="external"> /luis_wittlich</a> - Me siga no Instagram!</li>
-        <li><img src="icone-facebook.png" alt="Meu Facebook"><a href="https://facebook.com/luiswittlich" target="_blank" rel="external"> /luiswittlich</a> - Me adiciona no Facebook!</li>
-        <li><img src="icone-github.png" alt="Github"><a href="https://github.com/Luiswittlich/Projetos.git" target="_blank" rel="external"> /luiswittlich</a> - Meu repositório no Github!</li>
-    </ul>   
+    <header>
+        <h1>Meu curriculo</h1>
+        <nav>
+            <a href="#">Meus Projetos</a>
+            <a href="#">Certificados</a>
+            <a href="#">Contatos</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Quem sou eu?</h1>
+        <img id="principal" src="img150.png" alt="Foto Perfil">
+        <p>Meu nome é <strong>Luis Carlos Wittlich Junior,</strong> estou aprendendo a programar e estou cursando Análise e Desenvolvimento de Sistemas pela Instituição Uninter! Estou desenvolvendo habilidades para programar em JavaScrip, Python, e aprendendo a desenvolver site em HTML5 e CSS3.</p>
+        <hr>
+        <h2>Como falar comigo?</h2>
+        <ul type="disk">
+            <li><img src="icone-linkedin.png" alt="PAGINA linkeDin"> <a href="https://www.linkedin.com/in/luiswittlich" target="_blank" rel="external">/luiswittlich</a> - Me adiciona lá no Linkedin</li>
+            <li><img src="icone-instagram.png" alt="Meu instagram"><a href="https://www.instagram.com/luis_wittlich" target="_blank" rel="external"> /luis_wittlich</a> - Me siga no Instagram!</li>
+            <li><img src="icone-facebook.png" alt="Meu Facebook"><a href="https://facebook.com/luiswittlich" target="_blank" rel="external"> /luiswittlich</a> - Me adiciona no Facebook!</li>
+            <li><img src="icone-github.png" alt="Github"><a href="https://github.com/Luiswittlich/Projetos.git" target="_blank" rel="external"> /luiswittlich</a> - Meu repositório no Github!</li>
+    </main>
+    </ul> 
+    <hr>  
 </body>
 </html>
