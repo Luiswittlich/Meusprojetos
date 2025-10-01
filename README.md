@@ -8,6 +8,7 @@
     background-color: #324037;
     color: white;
     margin:auto;
+    padding: 15px;
   }
 </style>
 <div>
