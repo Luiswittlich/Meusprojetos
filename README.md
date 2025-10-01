@@ -15,36 +15,8 @@
   a {
     color: #BFBFBF;
   }
-  header {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 16PX;
-    margin: auto;
-    background-color: #324037;
-    color: white;
-    text-align: center
-        }
-  nav {
-    margin-left: 5vh;
-    text-align: left;
-    padding: 10px;
-  }
-  nav a{
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    padding: 10px;
-    border-radius: 5px;
+
 </style>
-<header>
-    <h1>Meu curriculo</h1>
-    <nav>
-      <a href="#">Meus Projetos</a>
-       <a href="#">Certificados</a>
-       <a href="#">Contatos</a>
-    </nav>
-</header>
 <main>
   
 # HTML-CSS
