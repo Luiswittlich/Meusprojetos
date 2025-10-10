@@ -1,0 +1,81 @@
+@charset "UTF-8";
+/*TODAS AS DEMAIS MEDIAS*/
+
+/*typical device breakpoints
+------------------------------
+Pequenas telas : até 600px
+Celular: de 600px até 768px
+Tablet: de 768px até 992px
+Desktop: 992px ate 1200px
+Grandes Telas: acima de 1200px
+-------------------------------
+*/
+
+@media screen and (min-width: 768px) and (max-width:992px) {
+    body {
+        background-image: linear-gradient(to bottom, purple, rgb(101, 196, 142));
+    }
+    section#login {
+        width: 80vw;
+        max-height: 400px;
+
+    }
+
+    section#login > div#img {
+        float: left;
+        width: 30%;
+        height: 100%;
+    }
+
+    section#login > div#login2 {
+        float: right;
+        width: 70%;
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width:1200px) {
+    body {
+        background-image: linear-gradient(to bottom, purple, rgb(101, 196, 142));
+    }
+    section#login {
+        width: 80vw;
+        max-height: 400px;
+
+    }
+
+    section#login > div#img {
+        float: right;
+        width: 50%;
+        height: 100%;
+    }
+
+    section#login > div#login2 {
+        float: left;
+        width: 50%;
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        background-image: linear-gradient(to bottom, purple, rgb(101, 196, 142));
+    }
+    section#login {
+        width: 80vw;
+        max-height: 400px;
+
+    }
+
+    section#login > div#img {
+        float: right;
+        width: 60%;
+        height: 100%;
+    }
+
+    section#login > div#login2 {
+        float: left;
+        width: 40%;
+        height: 100%;
+    }
+}
