@@ -14,10 +14,6 @@
   a {
     color: #BFBFBF;
   }
- h1 {
-    width: 100vw;
-    text-aling: center;
-  }
 
 </style>
 <header>
