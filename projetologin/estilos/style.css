@@ -96,7 +96,7 @@ input.login {
 }
 #entrar {
     width: 90%;
-    padding: 10px;
+    height: 40px;
     border-radius: 10px;
     margin-bottom: 5px;
     background-color: rgb(101, 196, 142);
@@ -113,10 +113,12 @@ input#entrar:hover {
     height: 42px;
     border-radius: 10px;
     margin-bottom: 5px;
+    margin: 2px solid rgba(0, 0, 0, 0.337);
        
 }
 
 input.esqueci:hover {
     background-color: rgb(101, 196, 142);
+    border: 2px solid rgb(60, 116, 84);
 }
 
