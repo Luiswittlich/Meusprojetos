@@ -11,18 +11,13 @@
     padding: 15px;
     border-radius: 10px;
   }
-  div#cabeçalho {
-    width: 100vw;
-    margin: auto;
-    text-aling: center;
-    
   a {
     color: #BFBFBF;
   }
 
 </style>
 <header>
-<div id="cabeçalho">
+<div>
 # HTML-CSS
 </div>
 </header>
