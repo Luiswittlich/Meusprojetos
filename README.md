@@ -14,7 +14,7 @@
   a {
     color: #BFBFBF;
   }
-  a > h1 {
+ h1 {
     width: 100vw;
     text-aling: center;
   }
