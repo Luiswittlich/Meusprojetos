@@ -1,0 +1,245 @@
+@charset "UTF-8";
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --fundo-principal: #f5f5f5;
+    --texto: #222222;
+    --texto-inverso: white;
+    --destaque: #0077ff;
+    --destaque-inverso: #66bbff;
+    --fundo-card: #ffffff;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5em;
+    background-color: var(--fundo-principal);
+    color: var(--texto);
+}
+
+header {
+    background-color: var(--destaque);
+    color: var(--texto);
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    z-index: 2;
+}
+
+nav#menu ul{
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+}
+
+nav#menu a {
+    text-decoration: none;
+    color: var(--texto-inverso);
+    font-weight: 600;
+    padding: 12px 15px;
+    border-radius: 5px;
+    transition: background-color .5s, color .5s;
+
+}
+
+nav#menu a:hover{
+    background-color: var(--destaque-inverso);
+    color: var(--destaque);
+}
+
+main {
+    display: grid;
+    grid-template: auto auto auto / auto 90vw auto;
+}
+
+section#profile {
+    background-color: var(--fundo-card);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.407);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 8px;
+}
+
+section#profile img{
+    border-radius: 50%;
+    border: 5px solid var(--destaque);
+    align-self: center;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+section#profile aside {
+    display: flex;
+    align-self: center;
+}
+
+section#profile ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+
+}
+
+section#profile a {
+    text-decoration: none;
+    color: var(--destaque);
+    font-weight: 600;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+section#profile h2 {
+    color: var(--destaque);
+    padding: 10px;
+}
+
+section#profile p{
+    text-align: left;
+    font-size: .9em;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+section#detalhes {
+    grid-column-start: 2;
+}
+
+article{
+    background-color: var(--fundo-card);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.407)
+}
+
+article h2 {
+    color: var(--destaque);
+    margin-bottom: 20px;
+}
+
+.videocontainer {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    aspect-ratio: 16/9;
+    z-index: 1;
+}
+
+.videocontainer iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+
+}
+
+#skill-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+#skill-container .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#skill-container .nome{
+    font-weight: bold;
+    color: var(--texto);
+}
+
+#skill-container .porcent{
+    font-weight: bold;
+    color: var(--destaque);
+}
+
+#skill-container .barra {
+    width: 100%;
+    height: 8px;
+    background-color: var(--fundo-principal);
+    border-radius: 4px;
+}
+
+#skill-container .progresso {
+    height: 100%;
+    background-color: var(--destaque-inverso);
+    border-radius: 4px;
+}
+
+@media screen and (min-width: 768px) {
+    #skill-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+}
+
+#formacao-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 30px;
+}
+
+#formacao-container .item{
+    background-color: var(--destaque-inverso);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    border-radius: 8px;  
+    overflow: hidden;
+    transition: background-color .5s;
+}
+
+#formacao-container .info {
+    background-color: var(--fundo-principal);
+    padding: 8px;
+    width: 99%;
+    border-radius: 8px;
+    transition: transform .5s;
+
+}
+
+#formacao-container .ano {
+    font-weight: bold;
+    font-size: .9em;
+}
+
+#formacao-container .inst {
+    color: var(--destaque-inverso);
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#formacao-container .descricao{
+    font-size: .9em;
+}
+
+#formacao-container .info:hover {
+    transform: translate(8px);
+    cursor: pointer;
+}
+#formacao-container .item:hover {
+    background-color: var(--destaque);
+    cursor: pointer;
+}
