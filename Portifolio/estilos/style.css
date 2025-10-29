@@ -5,6 +5,7 @@
     margin: 0px;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    scroll-margin-top: 80px;
 }
 
 :root {
