@@ -58,6 +58,8 @@ nav#menu a:hover{
 main {
     display: grid;
     grid-template: auto auto auto / auto 90vw auto;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 section#profile {
@@ -66,11 +68,10 @@ section#profile {
     grid-column-start: 2;
     grid-column-end: 3;
     padding: 10px;
-    margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
     flex-flow: column wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     border-radius: 8px;
 }
@@ -276,6 +277,21 @@ footer a:hover {
 }
 
 @media screen and (min-width: 768px) {
+    main{
+        grid-template-columns: auto 300px 1fr auto;
+
+    }
+    section#profile {
+        grid-column: 2 / 3;
+        height: fit-content;
+        position: sticky;
+        top: 65px;
+    }
+
+    section#detalhes{
+        grid-column: 3 / 4;
+    }
+
     #skill-container {
         grid-template-columns: 1fr 1fr;
     }
