@@ -154,6 +154,8 @@ p{
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 #modal.active {
@@ -167,7 +169,7 @@ p{
     border-radius: 12px;
     max-width: 400px;
     width: 90%;
-    max-height: 90vh;
+    max-height: calc(100vh - 40px);
     overflow-y: auto;
     position: relative;
 }
