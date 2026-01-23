@@ -6,6 +6,15 @@ const modalText = document.getElementById('modal-text')
 const modalImg = document.getElementById('modal-img')
 const closeModal = document.getElementById('close-modal')
 
+//LINKS DE ROLAGEM----------------------
+
+document.querySelector('a#inf-personagens').addEventListener('click',function(e){
+    e.preventDefault()
+    document.querySelector('section#img-personagens').scrollIntoView({
+        behavior: 'smooth'
+    })
+})
+
 const classes = {
     barbaro: {
         nome: 'Bárbaro',

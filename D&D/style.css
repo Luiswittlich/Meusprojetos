@@ -25,10 +25,11 @@ body{
 }
 
 /*CONFIGURAÇÃO DO HEADER ---------------------------------*/
-header{
-    
+header {
+    position: sticky;
+    top: 0;
+    z-index: 2000;
 }
-
 main{
     display: flex;
     justify-content: flex-end;
