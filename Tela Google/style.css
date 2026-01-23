@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+header {
+
+}
+
+div#tools {
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+div#tools div{
+    padding: 5px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 15px;
+}
+
+div#tools div a {
+    text-decoration: none;
+    color: black;
+}
+
+div#account {
+    width: 25px;
+    height: 25px;
+    background-color: blue;
+    border-radius: 50%;
+}
+
+/*PARTE DO BODY */
+
+section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+div#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 400px;
+}
+
+div#logo{
+    width: 400px;
+    height:400px;
+    background-image: url("imagens/logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom center;
+}
+
+div#search-box{
+    position: relative;
+    top: -80px;
+    width: 70vw;
+    height: 40px;
+    background-color: red;
+}
+
+div#search-box input#search {
+    width: 70vw;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    border-color: rgba(0, 0, 0, 0.218);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.227);
+    padding: 10px;
+    
+}
+
+@media screen and (min-width: 1000px){
+    div#search-box input#search{
+        width: 800px;
+    }
+}

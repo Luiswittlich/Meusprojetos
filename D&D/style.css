@@ -1,0 +1,191 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    --fundo-principal: #0D0C0C;
+    --destaque:#3b3438;
+    --font-principal:#daa542;
+    --font-secundaria:#b98729;
+    --font-tercearia:#ffffff;
+    --fonte1: 'MedievalSharp',cursive;
+}
+
+body{
+    width: 100%;
+    background-color: var(--fundo-principal);
+}
+
+/*CONFIGURAÇÃO DO HEADER ---------------------------------*/
+header{
+    
+}
+
+main{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: var(--fundo-principal);
+}
+
+main a{
+    margin: 10px;
+}
+
+div#container-logo{
+    width: 100vw;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.253);
+}
+
+div#logo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url(imagens/Gemini_Generated_Image_mdvht2mdvht2mdvh.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: -1;
+}
+
+div#logo img{
+    width: 350px;
+    margin: auto;
+    align-items: center;
+}
+
+/* INICIO CONFIGURAÇÃO CORPO-------------------------------------------*/
+section#information{
+    background-color: var(--fundo-principal);
+    padding: 10px;
+}
+
+
+/*SEÇÃO PERSONAGENS ----------------------------*/
+section#img-personagens{
+    background-image: url(imagens/fundo.png);
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    height: 100%;
+}
+
+div#personagens{
+    display: flex;
+    margin: auto;
+    margin-top: 10px;
+    background-color: transparent;
+    backdrop-filter: blur(3px);
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    flex-direction: row;
+}
+
+div#title-pers{
+    display: flex;
+    position: sticky;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 76vw;
+    flex-grow: 0;
+    margin: 5px;
+    background-color: var(--font-secundaria);
+    border-radius: 5px;
+    
+}
+
+div#title-pers h2{
+    color: var(--font-tercearia);
+    font-family: var(--fonte1);
+}
+
+div.card-js{
+    display: flex;
+    width: 120px;
+    height: 180px;
+    margin: 5px;
+    background-color: var(--destaque);
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+div.card-js.zoomed{
+    transform:scale(1.8);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 10;
+}
+
+h1{
+    font-family: var(--fonte1);
+    background-color: var(--fundo-principal);
+    color: var(--font-principal);
+}
+
+p{
+    color: var(--font-secundaria);
+    text-indent: 30px;
+}
+
+/*SEÇÃO FICHA PERSONAGENS ----------------------*/
+
+#modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#modal.active {
+    display: flex;
+}
+
+#modal-content {
+    background: #111;
+    color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+}
+
+#close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#modal-img{
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+/*SEÇÃO DADO ------------------------*/
+section#dado-fundo{
+
+    background-color: var(--font-secundaria);
+}
