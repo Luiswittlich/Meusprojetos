@@ -22,6 +22,11 @@ const classes = {
         descricao: 'Bruxo (warlock) é um conjurador que ganha poder mágico ao fazer um pacto com uma entidade poderosa',
         imagem: "imagens/warlock.png"
     },
+    mago: {
+        nome: 'Mago',
+        descricao: 'O mago é um estudioso da magia arcana que usa inteligência e grimórios para lançar feitiços poderosos, controlando o campo de batalha com conhecimento e preparo.',
+        imagem: 'imagens/mago.png'
+    },
 }
 
 

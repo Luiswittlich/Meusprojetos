@@ -61,7 +61,7 @@ div#logo {
 }
 
 div#logo img{
-    width: 350px;
+    width: 250px;
     margin: auto;
     align-items: center;
 }
@@ -155,7 +155,6 @@ p{
     justify-content: center;
     z-index: 1000;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
 }
 
 #modal.active {
