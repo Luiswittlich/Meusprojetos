@@ -11,7 +11,7 @@ html, body {
 }
 
 :root{
-    --fundo-principal: #0D0C0C;
+    --fundo-principal: #000000;
     --destaque:#3b3438;
     --font-principal:#daa542;
     --font-secundaria:#b98729;
@@ -32,19 +32,47 @@ header {
 }
 main{
     display: flex;
-    justify-content: flex-end;
-    padding: 10px;
-    background-color: var(--fundo-principal);
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    background:linear-gradient(to bottom,black, rgba(0, 0, 0, 0));
+}
+
+main ul{
+    display: flex;
+    justify-content: center;
+}
+
+main ul li{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    border-radius: 1000px;
+    height: 50px;
 }
 
 main a{
     margin: 10px;
+    text-decoration: none;
+    font-family: var(--fonte1);
+    font-size: 10pt;
+    color: var(--font-tercearia);
+}
+
+li:hover{
+    background-color: #ff6a00;
+    box-shadow: 0px 0px 5px #ff6a00,
+                0px 0px 25px #ff6a00,
+                0px 0px 50px #ff6a00,
+                0px 0px 200px #ff6a00;
+    transition: all 0.5s ease-in-out;
 }
 
 div#container-logo{
     width: 100vw;
-    height: 200px;
-    background-color: rgba(0, 0, 0, 0.253);
+    height: 250px;
+    background: linear-gradient(to bottom,black , rgba(0, 0, 0, 0)50%, black)
 }
 
 div#logo {
@@ -83,6 +111,12 @@ section#img-personagens{
     height: 100%;
 }
 
+div.degrade{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top,black, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgb(0, 0, 0));
+}
+
 div#personagens{
     display: flex;
     margin: auto;
@@ -103,7 +137,7 @@ div#title-pers{
     align-items: center;
     justify-content: center;
     height: 50px;
-    width: 76vw;
+    width: 90vw;
     flex-grow: 0;
     margin: 5px;
     font-family: var(--fonte1);
@@ -155,7 +189,7 @@ p{
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    z-index: 3000;
     overflow-y: auto;
 }
 
