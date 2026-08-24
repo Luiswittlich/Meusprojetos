@@ -1,11 +1,13 @@
 @charset "UTF-8";
 
+/* Configurações gerais da página */
 * {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
 }
 
+/* Cores utilizadas no tema claro */
 :root {
     --fundo-principal: #f5f5f5;
     --texto: #222222;
@@ -15,6 +17,7 @@
     --fundo-card: #ffffff;
 }
 
+/* Cores utilizadas quando o tema escuro está ativado */
 body.escuro {
     --fundo-principal: #222222;
     --texto: #ffffff;
@@ -32,6 +35,7 @@ body{
     transition: background-color .5s, color .5s;
 }
 
+/* Cabeçalho e menu de navegação */
 header {
     background-color: var(--destaque);
     color: var(--texto);
@@ -72,6 +76,7 @@ main {
     margin-top: 20px;
 }
 
+/* Área de apresentação e perfil */
 section#profile {
     background-color: var(--fundo-card);
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.407);
@@ -161,6 +166,7 @@ article h2 {
 
 }
 
+/* Habilidades e barras de progresso */
 #skill-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -197,6 +203,7 @@ article h2 {
 }
 
 
+/* Cards utilizados para mostrar a formação */
 #formacao-container {
     display: flex;
     flex-flow: column;
@@ -236,14 +243,15 @@ article h2 {
     
 }
 
-#projeto-container {
+/* Organização e aparência dos projetos do portfólio */
+#portifolio-container {
     display: flex;
     flex-direction: column-reverse;
     gap: 10px;
 }
 
 
-#projeto-container .projeto-top{
+#portifolio-container .portifolio-top{
     display: flex;
     flex-flow: column;
     gap: 10px;
@@ -255,16 +263,16 @@ article h2 {
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.399);
 }
 
-#projeto-container a{
+#portifolio-container a{
     text-decoration: none;
     color: var(--destaque);
 }
 
-#projeto-container a:hover{
+#portifolio-container a:hover{
     color: var(--destaque-inverso);
 }
 
-#projeto-container .foto{
+#portifolio-container .foto{
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
@@ -272,12 +280,90 @@ article h2 {
     border-radius: 10px;
 }
 
-#projeto-container .projeto-top:hover{
+#portifolio-container .portifolio-top:hover{
     border-left-color: var(--destaque);
     border-left-width: 15px;
     cursor: pointer;
 }
 
+/* Formulário de contato e mensagens de validação */
+#contato p {
+    margin-bottom: 15px;
+}
+
+#form-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#form-contato .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#form-contato label {
+    font-weight: bold;
+}
+
+#form-contato input,
+#form-contato textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #aaaaaa;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1em;
+    background-color: var(--fundo-principal);
+    color: var(--texto);
+}
+
+#form-contato textarea {
+    resize: vertical;
+}
+
+#form-contato button {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--destaque);
+    color: var(--texto-inverso);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#form-contato button:not(:disabled):hover {
+    background-color: var(--destaque-inverso);
+}
+
+#mensagem-formulario {
+    font-weight: bold;
+}
+
+#mensagem-formulario.erro {
+    color: #c62828;
+}
+
+#mensagem-formulario.sucesso {
+    color: #2e7d32;
+}
+/* Aparência dos campos depois do envio */
+#form-contato input:disabled,
+#form-contato textarea:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #dddddd;
+}
+
+/* Aparência do botão depois do envio */
+#form-contato button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #777777;
+}
+
+/* Rodapé da página */
 footer {
     background-color: var(--destaque);
     color: var(--texto-inverso);
@@ -294,12 +380,31 @@ footer a{
 footer a:hover {
     color: var(--destaque-inverso);
 }
+/* Ajustes do menu para telas menores */
+@media screen and (max-width: 767px) {
 
+    header {
+        justify-content: center;
+    }
+
+    nav#menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav#menu a {
+        display: block;
+        padding: 8px 10px;
+    }
+}
+
+/* Ajustes do layout para telas maiores */
 @media screen and (min-width: 768px) {
     main{
         grid-template-columns: auto 300px 1fr auto;
 
     }
+    
     section#profile {
         grid-column: 2 / 3;
         height: fit-content;
@@ -315,16 +420,16 @@ footer a:hover {
         grid-template-columns: 1fr 1fr;
     }
 
-    #projeto-container .projeto-top{
+    #portifolio-container .portifolio-top{
         flex-direction: row-reverse;
         justify-content: space-between;
     }
 
-    #projeto-container .projeto-info {
+    #portifolio-container .portifolio-info {
         max-width: 80%;
     }
 
-    #projeto-container .foto {
+    #portifolio-container .foto {
         aspect-ratio: 1/1;
         max-width: 20%;
         max-height: 200px;
