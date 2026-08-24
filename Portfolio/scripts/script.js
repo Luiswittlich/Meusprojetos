@@ -20,7 +20,8 @@ function temaEscuro(tipo) {
 }
 
 // Troca o tema quando o usuário clica no botão e salva a escolha no navegador
-botao.addEventListener('click', () => {
+botao.addEventListener('click', (evento) => {
+  evento.preventDefault();
   const isescuro = body.classList.toggle('escuro');
   temaEscuro(isescuro);
   localStorage.setItem('tema', isescuro ? 'escuro' : 'claro');
