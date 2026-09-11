@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Almoxarifado Cooperagro</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho-conteudo">
+            <img src="images/Logo Agrosen_page-0001.jpg" alt="Logo Agrosem" class="logo-empresa">
+
+            <div class="cabecalho-texto">
+                <h1>COOPERAGRO</h1>
+                <h2>Controle de Almoxarifado</h2>
+            </div>
+        </div>
+        
+    </header>
+    <main>
+        <section class="menu">
+            <button id="menu-cadastro">
+                Cadastrar Material
+            </button>
+
+            <button id="menu-retirada">
+                Nova Retirada
+            </button>
+
+            <button id="menu-entrada">
+                Entrada de Estoque
+            </button>
+
+            <button id="menu-estoque">
+                Consultar Estoque
+            </button>
+
+            <button id="menu-historico">
+                Histórico de Movimentações
+            </button>
+        </section>
+        <section class="cadastro-material">
+
+            <div class="titulo-tela">
+                <h2>Cadastrar Material</h2>
+                <p>Cadastre um novo material no almoxarifado.</p>
+            </div>
+
+            <form id="form-material">
+
+                <!-- IDENTIFICAÇÃO -->
+                <div class="bloco-formulario">
+
+                    <h3>Identificação do Material</h3>
+
+                    <label for="codigo-barras">
+                        Código de barras
+                    </label>
+
+                    <input
+                        type="text"
+                        id="codigo-barras"
+                        name="codigo-barras"
+                        placeholder="Leia ou digite o código"
+                        required
+                    >
+
+                    <label for="descricao">
+                        Descrição
+                    </label>
+
+                    <input
+                        type="text"
+                        id="descricao"
+                        name="descricao"
+                        placeholder="Descrição do material"
+                        required
+                    >
+
+                    <label for="unidade">
+                        Unidade
+                    </label>
+
+                    <input
+                        type="text"
+                        id="unidade"
+                        name="unidade"
+                        placeholder="Ex.: UND, CX, KG"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CONTROLE DE ESTOQUE -->
+                <div class="bloco-formulario">
+
+                    <h3>Controle de Estoque</h3>
+
+                    <div class="linha-estoque">
+                         <div>
+                            <label for="estoque-minimo">
+                                Estoque mínimo
+                            </label>
+
+                            <input
+                                type="number"
+                                id="estoque-minimo"
+                                name="estoque-minimo"
+                                min="0"
+                                value="0"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn-finalizar"
+                >
+                    Cadastrar Material
+                </button>
+
+            </form>
+
+        </section>
+        <section class="retirada-material">
+
+            <div class="titulo-tela">
+                <h2>Nova Retirada</h2>
+                <p>Registre os materiais retirados do almoxarifado.</p>
+            </div>
+
+            <!-- DADOS DA REQUISIÇÃO -->
+            <div class="bloco-formulario">
+
+                <h3>Dados da Requisição</h3>
+
+                <label for="nome-retirante">
+                    Colaborador que está retirando
+                </label>
+
+                <input
+                    type="text"
+                    id="nome-retirante"
+                    placeholder="Nome do colaborador"
+                >
+
+                <label for="nome-responsavel">
+                    Responsável pelo almoxarifado
+                </label>
+
+                <input
+                    type="text"
+                    id="nome-responsavel"
+                    placeholder="Nome do responsável"
+                >
+
+            </div>
+
+
+            <!-- BUSCA DO MATERIAL -->
+            <div class="bloco-formulario">
+
+                <h3>Adicionar Material</h3>
+
+                <label for="codigo-retirada">
+                    Código de barras
+                </label>
+
+                <div class="linha-busca">
+
+                    <input
+                        type="text"
+                        id="codigo-retirada"
+                        placeholder="Leia ou digite o código"
+                    >
+
+                    <button
+                        type="button"
+                        id="btn-buscar-material"
+                    >
+                        Buscar Material
+                    </button>
+
+                </div>
+
+
+                <!-- MATERIAL ENCONTRADO -->
+                <div id="material-encontrado">
+
+                    <div class="info-material">
+
+                        <div>
+                            <span class="info-titulo">
+                                Descrição
+                            </span>
+
+                            <span id="descricao-retirada">
+                                ---
+                            </span>
+                        </div>
+
+                        <div>
+                            <span class="info-titulo">
+                                Estoque disponível
+                            </span>
+
+                            <span id="estoque-retirada">
+                                ---
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <label for="quantidade-retirada">
+                    Quantidade
+                </label>
+
+                <input
+                    type="number"
+                    id="quantidade-retirada"
+                    min="1"
+                    value="1"
+                >
+
+                <button
+                    type="button"
+                    id="btn-adicionar-item"
+                    class="btn-principal"
+                >
+                    + Adicionar à Retirada
+                </button>
+
+            </div>
+
+
+            <!-- ITENS DA RETIRADA -->
+            <div class="bloco-formulario">
+
+                <h3>Itens da Retirada</h3>
+
+                <div class="tabela-container">
+
+                    <table id="tabela-retirada">
+
+                        <thead>
+                            <tr>
+                                <th>Material</th>
+                                <th>Quantidade</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="lista-retirada">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- FINALIZAR -->
+            <button
+                type="button"
+                id="btn-finalizar-retirada"
+                class="btn-finalizar"
+            >
+                Finalizar Retirada
+            </button>
+
+        </section>
+        <section class="entrada-estoque">
+
+            <div class="titulo-tela">
+                <h2>Entrada de Estoque</h2>
+                <p>Registre a entrada de novos materiais no almoxarifado.</p>
+            </div>
+
+
+            <!-- BUSCA DO MATERIAL -->
+            <div class="bloco-formulario">
+
+                <h3>Buscar Material</h3>
+
+                <label for="codigo-entrada">
+                    Código de barras
+                </label>
+
+                <div class="linha-busca">
+
+                    <input
+                        type="text"
+                        id="codigo-entrada"
+                        placeholder="Leia ou digite o código"
+                    >
+
+                    <button
+                        type="button"
+                        id="btn-buscar-entrada"
+                    >
+                        Buscar Material
+                    </button>
+
+                </div>
+
+
+                <!-- MATERIAL ENCONTRADO -->
+                <div id="material-entrada">
+
+                    <div class="info-material">
+
+                        <div>
+                            <span class="info-titulo">
+                                Material
+                            </span>
+
+                            <span id="descricao-entrada">
+                                ---
+                            </span>
+                        </div>
+
+                        <div>
+                            <span class="info-titulo">
+                                Estoque atual
+                            </span>
+
+                            <span id="estoque-atual-entrada">
+                                ---
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DADOS DA ENTRADA -->
+            <div class="bloco-formulario">
+
+                <h3>Dados da Entrada</h3>
+
+                <label for="quantidade-entrada">
+                    Quantidade recebida
+                </label>
+
+                <input
+                    type="number"
+                    id="quantidade-entrada"
+                    min="1"
+                    value="1"
+                >
+
+
+                <label for="responsavel-entrada">
+                    Responsável pela entrada
+                </label>
+
+                <input
+                    type="text"
+                    id="responsavel-entrada"
+                    placeholder="Nome do responsável"
+                >
+
+            </div>
+
+
+            <!-- CONFIRMAR -->
+            <button
+                type="button"
+                id="btn-confirmar-entrada"
+                class="btn-finalizar"
+            >
+                Confirmar Entrada no Estoque
+            </button>
+
+        </section>
+        <section class="consulta-estoque">
+
+            <div class="titulo-tela">
+                <h2>Consultar Estoque</h2>
+                <p>Consulte os materiais cadastrados e acompanhe os níveis de estoque.</p>
+            </div>
+            <div class="resumo-estoque">
+
+                <div class="card-resumo">
+                    <span class="resumo-titulo">
+                        Total de materiais
+                    </span>
+
+                    <span
+                        class="resumo-numero"
+                        id="total-materiais"
+                    >
+                        0
+                    </span>
+                </div>
+
+
+                <div class="card-resumo">
+                    <span class="resumo-titulo">
+                        Estoque baixo
+                    </span>
+
+                    <span
+                        class="resumo-numero resumo-baixo"
+                        id="total-estoque-baixo"
+                    >
+                        0
+                    </span>
+                </div>
+
+
+                <div class="card-resumo">
+                    <span class="resumo-titulo">
+                        Sem estoque
+                    </span>
+
+                    <span
+                        class="resumo-numero resumo-zerado"
+                        id="total-sem-estoque"
+                    >
+                        0
+                    </span>
+                </div>
+
+            </div>
+
+            <!-- FILTROS -->
+            <div class="bloco-formulario">
+
+                <h3>Buscar Material</h3>
+
+                <div class="barra-consulta">
+
+                    <input
+                        type="text"
+                        id="busca-estoque"
+                        placeholder="Buscar por código de barras ou descrição"
+                    >
+
+                    <button
+                        type="button"
+                        id="btn-atualizar-estoque"
+                    >
+                        Atualizar Estoque
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- TABELA -->
+            <div class="bloco-formulario">
+
+                <h3>Materiais em Estoque</h3>
+
+                <div class="tabela-container">
+
+                    <table id="tabela-estoque">
+
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Material</th>
+                                <th>Unidade</th>
+                                <th>Estoque</th>
+                                <th>Mínimo</th>
+                                <th>Situação</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="lista-estoque">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+        <section class="historico-movimentacoes">
+
+            <div class="titulo-tela">
+                <h2>Histórico de Movimentações</h2>
+                <p>
+                    Consulte as entradas e retiradas realizadas no almoxarifado.
+                </p>
+            </div>
+            <div class="resumo-historico">
+                <div class="card-resumo">
+                    <span class="resumo-titulo">
+                        Total de movimentações
+                    </span>
+
+                    <span
+                        class="resumo-numero"
+                        id="total-movimentacoes"
+                    >
+                        0
+                    </span>
+                </div>
+
+
+                <div class="card-resumo">
+                    <span class="resumo-titulo">
+                        Entradas
+                    </span>
+
+                    <span
+                        class="resumo-numero resumo-entradas"
+                        id="total-entradas"
+                    >
+                        0
+                    </span>
+                </div>
+
+
+                <div class="card-resumo">
+                    <span class="resumo-titulo">
+                        Retiradas
+                    </span>
+
+                    <span
+                        class="resumo-numero resumo-retiradas"
+                        id="total-retiradas"
+                    >
+                        0
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="bloco-formulario">
+
+                <h3>Filtros</h3>
+
+                <div class="linha-filtros-historico">
+
+                    <div class="campo-filtro campo-busca-historico">
+
+                        <label for="busca-historico">
+                            Buscar
+                        </label>
+
+                        <input
+                            type="text"
+                            id="busca-historico"
+                            placeholder="Material ou responsável"
+                        >
+
+                    </div>
+
+
+                    <div class="campo-filtro">
+
+                        <label for="tipo-historico">
+                            Tipo
+                        </label>
+
+                        <select id="tipo-historico">
+
+                            <option value="todos">
+                                Todos
+                            </option>
+
+                            <option value="entrada">
+                                Entrada
+                            </option>
+
+                            <option value="retirada">
+                                Retirada
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="linha-filtros-historico">
+
+                    <div class="campo-filtro">
+
+                        <label for="data-inicial-historico">
+                            Data inicial
+                        </label>
+
+                        <input
+                            type="date"
+                            id="data-inicial-historico"
+                        >
+
+                    </div>
+
+
+                    <div class="campo-filtro">
+
+                        <label for="data-final-historico">
+                            Data final
+                        </label>
+
+                        <input
+                            type="date"
+                            id="data-final-historico"
+                        >
+
+                    </div>
+
+
+                    <div class="campo-filtro campo-botao-historico">
+
+                        <button
+                            type="button"
+                            id="btn-atualizar-historico"
+                        >
+                            Atualizar Histórico
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="bloco-formulario">
+
+                <h3>Movimentações</h3>
+
+                <div class="tabela-container">
+
+                    <table id="tabela-historico">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Data / Hora</th>
+
+                                <th>Tipo</th>
+
+                                <th>Material</th>
+
+                                <th>Quantidade</th>
+
+                                <th>Responsável</th>
+
+                                <th>Requisição</th>
+
+                                <th>Ação</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="lista-historico"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

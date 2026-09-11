@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Requisição de Materiais</title>
+    <link rel="stylesheet" href="styles/impressao.css">
+</head>
+<body>
+    <div class="requisicao">
+        <header>
+            <img
+                src="images/Logo Agrosen_page-0001.jpg"
+                alt="Logo Agrosem"
+                class="logo-requisicao"
+            >
+
+            <div class="titulo-requisicao">
+                <h1>AGROSEM</h1>
+                <h2>Requisição de Materiais</h2>
+                <p>Almoxarifado</p>
+            </div>
+
+        </header>
+
+        <section class="dados">
+
+            <p>
+                <strong>Requisição nº:</strong>
+                <span id="numero-requisicao"></span>
+            </p>
+
+            <p>
+                <strong>Data:</strong>
+                <span id="data-requisicao"></span>
+            </p>
+
+            <p>
+                <strong>Colaborador:</strong>
+                <span id="nome-retirante"></span>
+            </p>
+
+            <p>
+                <strong>Hora:</strong>
+                <span id="hora-requisicao"></span>
+            </p>
+
+            <p>
+                <strong>Responsável:</strong>
+                <span id="nome-responsavel"></span>
+            </p>
+
+        </section>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Material</th>
+                    <th>Unidade</th>
+                    <th>Qtd.</th>
+                </tr>
+            </thead>
+
+            <tbody id="itens-requisicao">
+            </tbody>
+
+        </table>
+
+        <section class="assinaturas">
+
+            <div>
+                ______________________________
+                <br>
+                Colaborador
+            </div>
+
+            <div>
+                ______________________________
+                <br>
+                Responsável pelo Almoxarifado
+            </div>
+
+        </section>
+
+        <button id="btn-imprimir" onclick="window.print()">
+            Imprimir
+        </button>
+
+    </div>
+
+    <script src="scripts/impressao.js"></script>
+
+</body>
+
+</html>

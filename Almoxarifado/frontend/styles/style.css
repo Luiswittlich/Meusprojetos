@@ -1,0 +1,1064 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f4;
+    color: #222;
+}
+
+header {
+    background-color: #2f6b3a;
+    color: white;
+    text-align: center;
+    padding: 25px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+header h2 {
+    margin: 6px 0 0;
+    font-size: 17px;
+    font-weight: normal;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px auto 30px;
+}
+
+.menu button {
+    background-color: white;
+    color: #2f6b3a;
+    border: 1px solid #2f6b3a;
+    padding: 12px 18px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.menu button:hover {
+    background-color: #e7f0e8;
+}
+
+.menu button.menu-ativo {
+    background-color: #2f6b3a;
+    color: white;
+}
+
+.cadastro-material,
+.retirada-material,
+.entrada-estoque,
+.consulta-estoque,
+.historico-movimentacoes {
+    margin: 30px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.cadastro-material,
+.retirada-material,
+.entrada-estoque {
+    width: 100%;
+    max-width: 500px;
+}
+
+.consulta-estoque,
+.historico-movimentacoes {
+    width: 100%;
+}
+
+.cadastro-material h2,
+.retirada-material h2,
+.entrada-estoque h2,
+.consulta-estoque h2,
+.historico-movimentacoes h2 {
+    text-align: center;
+    color: #2f6b3a;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cfcfcf;
+    border-radius: 7px;
+    font-size: 15px;
+    background-color: white;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #2f6b3a;
+    box-shadow: 0 0 0 2px rgba(47, 107, 58, 0.12);
+}
+
+button {
+    font-family: inherit;
+}
+
+.cadastro-material button,
+.retirada-material button,
+.entrada-estoque button {
+    width: 100%;
+    margin-top: 14px;
+    padding: 13px;
+    border: none;
+    border-radius: 7px;
+    background-color: #2f6b3a;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cadastro-material button:hover,
+.retirada-material button:hover,
+.entrada-estoque button:hover {
+    background-color: #25572f;
+}
+
+#material-encontrado,
+#material-entrada {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f5f7f5;
+    border-left: 4px solid #2f6b3a;
+    border-radius: 6px;
+}
+
+.tabela-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th {
+    background-color: #2f6b3a;
+    color: white;
+    padding: 11px;
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f6f8f6;
+}
+
+.estoque-baixo {
+    background-color: #ffe3e3;
+    font-weight: bold;
+}
+
+.estoque-normal {
+    background-color: white;
+}
+
+.tela-oculta {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    main {
+        padding: 15px;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu button {
+        width: 100%;
+    }
+
+    .cadastro-material,
+    .retirada-material,
+    .entrada-estoque,
+    .consulta-estoque,
+    .historico-movimentacoes {
+        padding: 20px;
+    }
+}
+/* ==================================================
+   CABEÇALHO
+================================================== */
+
+.cabecalho {
+    width: 100%;
+    background-color: #176b43;
+    padding: 18px 30px;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cabecalho-conteudo {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-empresa {
+    width: 150px;
+    height: 150px;
+
+    object-fit: contain;
+
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.cabecalho-texto {
+    text-align: left;
+}
+
+.cabecalho-texto h1 {
+    margin: 0;
+    font-size: 44px;
+    letter-spacing: 1px;
+}
+
+.cabecalho-texto h2 {
+    margin: 5px 0 0;
+    font-size: 19px;
+    font-weight: normal;
+    opacity: 0.9;
+}
+
+/* ==================================================
+   NOVA RETIRADA
+================================================== */
+
+.retirada-material {
+    width: 100%;
+    max-width: 850px;
+}
+
+
+/* TÍTULO DA TELA */
+
+.titulo-tela {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.titulo-tela h2 {
+    margin-bottom: 5px;
+}
+
+.titulo-tela p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* BLOCOS */
+
+.bloco-formulario {
+    background-color: #f8faf8;
+    border: 1px solid #e1e5e1;
+    border-radius: 8px;
+
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.bloco-formulario h3 {
+    margin-top: 0;
+    margin-bottom: 18px;
+
+    color: #2f6b3a;
+    font-size: 17px;
+
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+
+/* BUSCA POR CÓDIGO */
+
+.linha-busca {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.linha-busca input {
+    flex: 1;
+}
+
+.linha-busca button {
+    width: auto;
+    min-width: 160px;
+    margin-top: 0;
+}
+
+
+/* MATERIAL ENCONTRADO */
+
+#material-encontrado {
+    margin: 18px 0;
+
+    padding: 16px;
+
+    background-color: #eef5ef;
+    border-left: 4px solid #2f6b3a;
+
+    border-radius: 6px;
+}
+
+.info-material {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.info-material div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.info-titulo {
+    color: #555;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#descricao-retirada,
+#estoque-retirada {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+}
+
+
+/* BOTÃO ADICIONAR */
+
+.btn-principal {
+    margin-top: 18px !important;
+}
+
+
+/* TABELA */
+
+#tabela-retirada {
+    margin-top: 0;
+}
+
+#tabela-retirada th:nth-child(2),
+#tabela-retirada td:nth-child(2),
+#tabela-retirada th:nth-child(3),
+#tabela-retirada td:nth-child(3) {
+    text-align: center;
+}
+
+
+/* BOTÃO FINALIZAR */
+
+.btn-finalizar {
+    width: 100%;
+
+    background-color: #176b43 !important;
+
+    padding: 15px !important;
+
+    font-size: 16px !important;
+
+    border-radius: 8px !important;
+
+    margin-top: 5px !important;
+}
+
+.btn-finalizar:hover {
+    background-color: #105433 !important;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .linha-busca {
+        flex-direction: column;
+    }
+
+    .linha-busca button {
+        width: 100%;
+    }
+
+    .info-material {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ==================================================
+   ENTRADA DE ESTOQUE
+================================================== */
+
+.entrada-estoque {
+    width: 100%;
+    max-width: 750px;
+}
+
+
+/* MATERIAL ENCONTRADO */
+
+#material-entrada {
+    margin-top: 18px;
+
+    padding: 16px;
+
+    background-color: #eef5ef;
+
+    border-left: 4px solid #2f6b3a;
+
+    border-radius: 6px;
+}
+
+
+#descricao-entrada,
+#estoque-atual-entrada {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+}
+
+
+/* RESPONSÁVEL */
+
+.entrada-estoque label {
+    margin-top: 14px;
+}
+
+
+/* BOTÃO CONFIRMAR */
+
+#btn-confirmar-entrada {
+    width: 100%;
+
+    background-color: #176b43;
+
+    color: white;
+
+    border: none;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 5px;
+}
+
+
+#btn-confirmar-entrada:hover {
+    background-color: #105433;
+}
+/* ==================================================
+   CADASTRO DE MATERIAL
+================================================== */
+
+.cadastro-material {
+    width: 100%;
+    max-width: 750px;
+}
+
+
+/* ESTOQUE INICIAL E MÍNIMO LADO A LADO */
+
+.linha-estoque {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.linha-estoque div {
+    width: 100%;
+}
+
+
+/* BOTÃO CADASTRAR */
+
+.cadastro-material .btn-finalizar {
+    width: 100%;
+
+    background-color: #176b43;
+
+    color: white;
+
+    border: none;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 5px;
+}
+
+.cadastro-material .btn-finalizar:hover {
+    background-color: #105433;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 600px) {
+
+    .linha-estoque {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+}
+/* ==================================================
+   CONSULTA DE ESTOQUE
+================================================== */
+
+.consulta-estoque {
+    width: 100%;
+    max-width: 1100px;
+}
+
+
+/* BARRA DE PESQUISA */
+
+.barra-consulta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.barra-consulta input {
+    flex: 1;
+}
+
+.barra-consulta button {
+    width: auto;
+    min-width: 170px;
+
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: #176b43;
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.barra-consulta button:hover {
+    background-color: #105433;
+}
+
+
+/* TABELA DE ESTOQUE */
+
+#tabela-estoque {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tabela-estoque th {
+    background-color: #176b43;
+    color: white;
+
+    padding: 12px 10px;
+    text-align: left;
+
+    font-size: 14px;
+}
+
+#tabela-estoque td {
+    padding: 11px 10px;
+
+    border-bottom: 1px solid #e4e4e4;
+
+    font-size: 14px;
+}
+
+
+/* CENTRALIZA ALGUMAS COLUNAS */
+
+#tabela-estoque th:nth-child(3),
+#tabela-estoque th:nth-child(4),
+#tabela-estoque th:nth-child(5),
+#tabela-estoque th:nth-child(6),
+#tabela-estoque td:nth-child(3),
+#tabela-estoque td:nth-child(4),
+#tabela-estoque td:nth-child(5),
+#tabela-estoque td:nth-child(6) {
+    text-align: center;
+}
+
+
+/* LINHA AO PASSAR O MOUSE */
+
+#tabela-estoque tbody tr:hover {
+    background-color: #f4f8f5;
+}
+
+
+/* ESTOQUE NORMAL */
+
+.estoque-normal {
+    background-color: white;
+}
+
+
+/* ESTOQUE BAIXO */
+
+.estoque-baixo {
+    background-color: #fff0f0;
+}
+
+.estoque-baixo td:nth-child(6) {
+    font-weight: bold;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 700px) {
+
+    .barra-consulta {
+        flex-direction: column;
+    }
+
+    .barra-consulta button {
+        width: 100%;
+    }
+
+}
+/* ==================================================
+   STATUS DO ESTOQUE
+================================================== */
+
+.status-estoque {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+
+/* ESTOQUE NORMAL */
+
+.status-normal {
+    background-color: #e3f4e8;
+    color: #176b43;
+}
+
+/* ESTOQUE BAIXO */
+
+.status-baixo {
+    background-color: #fff3cd;
+    color: #856404;
+}
+/*SEM ESTOQUE*/
+
+.status-sem-estoque {
+    background-color: #b42323;
+    color: white;
+}
+
+.sem-estoque {
+    background-color: #b42323;
+    color:white;
+}
+/* ==================================================
+   RESUMO DO ESTOQUE
+================================================== */
+
+.resumo-estoque {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.card-resumo {
+    background-color: white;
+
+    border: 1px solid #e1e5e1;
+    border-radius: 10px;
+
+    padding: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.05);
+}
+
+
+.resumo-titulo {
+    display: block;
+
+    color: #666;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+
+.resumo-numero {
+    display: block;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    color: #176b43;
+}
+
+
+.resumo-baixo {
+    color: #b78300;
+}
+
+
+.resumo-zerado {
+    color: #b42323;
+}
+
+
+@media (max-width: 700px) {
+
+    .resumo-estoque {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* ==================================================
+   HISTÓRICO DE MOVIMENTAÇÕES
+================================================== */
+
+.historico-movimentacoes {
+    width: 100%;
+    max-width: 1200px;
+}
+
+
+.linha-filtros-historico {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+
+.campo-filtro {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.campo-busca-historico {
+    grid-column: span 2;
+}
+
+
+.campo-filtro label {
+    margin-bottom: 6px;
+}
+
+
+.campo-filtro input,
+.campo-filtro select {
+    width: 100%;
+}
+
+
+.campo-botao-historico {
+    justify-content: flex-end;
+}
+
+
+#btn-atualizar-historico {
+    width: 100%;
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: #176b43;
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+#btn-atualizar-historico:hover {
+    background-color: #105433;
+}
+
+
+/* TABELA */
+
+#tabela-historico {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+#tabela-historico th {
+    background-color: #176b43;
+    color: white;
+
+    padding: 12px 10px;
+
+    text-align: left;
+
+    font-size: 14px;
+}
+
+
+#tabela-historico td {
+    padding: 11px 10px;
+
+    border-bottom: 1px solid #e4e4e4;
+
+    font-size: 14px;
+}
+
+
+#tabela-historico th:nth-child(2),
+#tabela-historico th:nth-child(4),
+#tabela-historico th:nth-child(6),
+#tabela-historico th:nth-child(7),
+
+#tabela-historico td:nth-child(2),
+#tabela-historico td:nth-child(4),
+#tabela-historico td:nth-child(6),
+#tabela-historico td:nth-child(7) {
+    text-align: center;
+}
+
+
+#tabela-historico tbody tr:hover {
+    background-color: #f4f8f5;
+}
+
+
+/* BOTÃO ABRIR */
+
+#tabela-historico td button {
+    border: none;
+
+    background-color: #176b43;
+    color: white;
+
+    padding: 7px 12px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+#tabela-historico td button:hover {
+    background-color: #105433;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 750px) {
+
+    .linha-filtros-historico {
+        grid-template-columns: 1fr;
+    }
+
+
+    .campo-busca-historico {
+        grid-column: span 1;
+    }
+
+}
+
+/* ==================================================
+   STATUS DAS MOVIMENTAÇÕES
+================================================== */
+
+.status-movimentacao {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+
+.status-entrada {
+    background-color: #e3f4e8;
+    color: #176b43;
+}
+
+
+.status-retirada {
+    background-color: #fde5e5;
+    color: #b42323;
+}
+/* ==================================================
+   NÚMERO DA REQUISIÇÃO
+================================================== */
+
+.numero-requisicao {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background-color: #eef3ef;
+
+    color: #176b43;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* ==================================================
+   BOTÃO ABRIR REQUISIÇÃO
+================================================== */
+
+.btn-abrir-requisicao {
+    border: none;
+
+    background-color: #176b43;
+    color: white;
+
+    padding: 7px 14px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn-abrir-requisicao:hover {
+    background-color: #105433;
+
+    transform: translateY(-1px);
+}
+/* ==================================================
+   RESUMO DO HISTÓRICO
+================================================== */
+
+.resumo-historico {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.resumo-entradas {
+    color: #176b43;
+}
+
+
+.resumo-retiradas {
+    color: #b42323;
+}
+
+
+@media (max-width: 700px) {
+
+    .resumo-historico {
+        grid-template-columns: 1fr;
+    }
+
+}
